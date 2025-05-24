@@ -3,7 +3,7 @@ It's just an **array or linked list** with one special rule which is data can be
 **Deque is an interface**, meaning we have to implement it using either of [[LinkedList]], ArrayDeque, or ConcurrentLinkedDeque (for thread-safe operations)
 
 ### Initialization
-`Deque<Integer> dq = new LinkedList<>(); 
+`Deque<Integer> dq = new LinkedList<>();`
 `Deque<Integer> dq = new ArrayDeque<>(); // 90% time this one is used`
 
 ### Types

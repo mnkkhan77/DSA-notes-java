@@ -1,12 +1,12 @@
 Collection of nodes connected by edges. Denoted by G(V, E, W). V-vertex, E-edge, W-weight.
 
-### Usage
+## Usage
 
 - Social network analysis 
 - Recommendation systems.
 - Computer networks.
 
-### Types of Graph
+## Types of Graph
 
 - Null graph - no edges
 - **Trivial graph** - Single node
@@ -21,16 +21,16 @@ Collection of nodes connected by edges. Denoted by G(V, E, W). V-vertex, E-edge,
 - Bipartite Graph - A graph in which vertex can be divided into two sets such that vertex in each set does not contain any edge between them.
 - Weighted Graph - Edges have specified weight.
 
-### Complexity of Graph
+## Complexity of Graph
 | Action           | Adjacency Matrix | Adjacency List | Edge List |
 |------------------|------------------|----------------|-----------|
 | Adding Edge      | O(1)             | O(1)           | O(1)      |
 | Removing an edge | O(1)             | O(N)           | O(E)      |
 | Initializing     | O(N*N)           | O(N)           | O(E)      |
 
-### Representation of Graph
+## Representation of Graph
 
-#### - Adjacency Matrix
+### - Adjacency Matrix
 
 graph is stored in **2D matrix** where row and column is edge between vertices and the entry/values shows weight.
 			`int[][] mat` =  {{ 0, 5, 0, 0 },
@@ -53,7 +53,7 @@ Here's the **addEdge** method -
 - Uses `O(V^2)` space even if there are few edges
 - Not ideal for sparse graphs
 
-#### Adjacency List
+### Adjacency List
 Graph is stored in List of List where the inner list shows all the neighbors of the current node.
 
 	`List<List<Integer>>`	   0: 1 2 
@@ -75,7 +75,7 @@ Here's the addEdge method -
 ##### Downsides:
 - Slower edge lookups (`O(degree)` time)
 
-#### Edge List
+### Edge List
 Graph is stored as a list of edges from source to destination.
 
 	List<int[]>   (0 -> 1, weight: 4)

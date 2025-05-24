@@ -48,7 +48,7 @@ Hierarchical structure that is used to represent and organize data in the form o
 - Balanced BT - difference between any level is maximum 1
 - Segment Tree - used for storing intervals or segments. good for finding the sum, minimum, maximum, or other operations over a range of elements in an array.
 
-#### We generally work on binary tree
+>We generally work on binary tree
 
 ### Property of Binary Tree
 - max no. of nodes at level L is $2^L$ .
@@ -57,11 +57,60 @@ Hierarchical structure that is used to represent and organize data in the form o
 
 ### Complexity of BT
 | Operation              | Time Complexity | Auxiliary Space |
-|------------------------|------------------|------------------|
-| In-Order Traversal     | O(n)             | O(n)             |
-| Pre-Order Traversal    | O(n)             | O(n)             |
-| Post-Order Traversal   | O(n)             | O(n)             |
-| Insertion (Unbalanced) | O(n)             | O(n)             |
-| Searching (Unbalanced) | O(n)             | O(n)             |
-| Deletion (Unbalanced)  | O(n)             | O(n)             |
+| ---------------------- | --------------- | --------------- |
+| In-Order Traversal     | O(n)            | O(n)            |
+| Pre-Order Traversal    | O(n)            | O(n)            |
+| Post-Order Traversal   | O(n)            | O(n)            |
+| Insertion (Unbalanced) | O(n)            | O(n)            |
+| Searching (Unbalanced) | O(n)            | O(n)            |
+| Deletion (Unbalanced)  | O(n)            | O(n)            |
+
+### Traversal of BT
+
+- **Inorder** - root.left -> root -> root.right
+```
+void inorder(Node root){
+	if(root == null) return;
+	inorder(root.left);
+	System.out.println(root.val);
+	inorder(root.right);
+}
+```
+
+- **Preorder** - root -> root.left -> root.right
+```
+void preorder(Node root){
+	if(root == null) return;
+	System.out.println(root.val);
+	preorder(root.left);
+	preorder(root.right);
+}
+```
+
+- **Postorder** - root.left -> root.right -> root
+```
+void postorder(Node root){
+	if(root == null) return;
+	postorder(root.left);
+	postorder(root.right);
+	System.out.println(root.val);
+}
+```
+
+- **Level order** - root -> root.left -> root.right
+> this one is special, different and important all at once
+> this is also know as BFS in tree all other traversals are DFS
+```
+void levelOrder(Node root){
+	Queue<Node> q = new LinkedList<>();
+	q.add(root);
+
+	while(!q.isEmpty()){
+		Node curr = q.poll();
+		System.out.print(curr.val);
+		if(curr.left != null) q.add(curr.left);
+		if(curr.right != null) q.add(curr.right);
+	}
+}
+```
 
